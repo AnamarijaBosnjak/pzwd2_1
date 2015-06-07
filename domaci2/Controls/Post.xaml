@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="domaci2.Controls.Post"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="200" Margin="40,10,40,10" x:Name="PostControl" BorderBrush="Black" BorderThickness="2" Background="WhiteSmoke">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="32"></ColumnDefinition>
+            <ColumnDefinition Width="2.5*"></ColumnDefinition>
+            <ColumnDefinition Width="5*"></ColumnDefinition>
+            <ColumnDefinition Width="32"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image x:Name="EditIcon" Cursor="Hand"  Source="/Resources/Images/edit.png" Grid.Column="0" Grid.Row="0"/>
+        <Image x:Name="DeleteIcon" Cursor="Hand" Source="/Resources/Images/delete.png" Grid.Column="3" Grid.Row="0"/>
+        <Label Grid.Column="1" Grid.Row="1" Content="{Binding ElementName=PostControl, Path=Ime}" HorizontalAlignment="Left" Margin="0,4,0,10" Height="30" ></Label>
+        <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding ElementName=PostControl, Path=Status}" VerticalAlignment="Center" TextAlignment="Left" Margin="0,10,0,14" Background="White"></TextBlock>
+    </Grid>
+</UserControl>

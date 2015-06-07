@@ -1,0 +1,44 @@
+﻿<Window x:Class="domaci2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:domaci2.Controls"
+        Title="MainWindow" Height="350" Width="550" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Grid.Row="0" Grid.Column="0" Margin="3" Width="70" x:Name="AddL">DodajL</Button>
+            <Button Grid.Row="0" Grid.Column="0" Margin="3" Width="70" x:Name="AddR">DodajR</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" x:Name="MainUser">
+            <controls:User Title="MainUser" Background="LightBlue" Height="70" Width="120" Margin="15" />
+        </StackPanel>
+
+        <TextBox Grid.Column="1" Grid.Row="1"  Margin="30,10,0,30"  Height="35" Width="275" FontSize="20" Text="Search"/>
+
+        <ScrollViewer Grid.Row="2" Grid.Column="0" VerticalScrollBarVisibility="Auto" >
+            <StackPanel Orientation="Vertical"  x:Name="UserContainer">
+                <controls:User Title="Friend1" ></controls:User>
+                <controls:User Title="Friend2"></controls:User>
+                <controls:User Title="Friend3" ></controls:User>
+            </StackPanel>
+        </ScrollViewer>
+
+        <ScrollViewer Grid.Row="2" Grid.Column="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Vertical" x:Name="PostContainer">
+                <controls:Post Ime="Friend1" Status="status1" ></controls:Post>
+                <controls:Post Ime="Friend2" Status="status1"></controls:Post>
+                <controls:Post Ime="Friend3" Status="status1" ></controls:Post>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
